@@ -38,8 +38,7 @@ public class AddressController {
     @GetMapping("/{addressId}/view")
     public ResponseEntity<Address> addressById(@PathVariable String addressId) {
 
-        Address savedUser = this.addressService.getById(addressId);
-        return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
+        return ResponseEntity.ok(this.addressService.getById(addressId));
     }
 
 }

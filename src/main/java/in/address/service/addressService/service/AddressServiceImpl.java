@@ -17,7 +17,8 @@ public class AddressServiceImpl implements IAddress {
 
     @Override
     public Address saveAddress(Address address) {
-        address.setUserId(UUID.randomUUID().toString());
+        address.setUserId("0001");
+        address.setAddressId(UUID.randomUUID().toString());
         return this.repository.save(address);
     }
 
@@ -34,6 +35,6 @@ public class AddressServiceImpl implements IAddress {
     @Override
     public Address getById(String addressId) {
         return this.repository.findById(addressId)
-                .orElseThrow(()-> new ResourceNotFoundException("User not found with this id : " + addressId));
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with this id : " + addressId));
     }
 }
