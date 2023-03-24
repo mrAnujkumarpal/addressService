@@ -1,0 +1,30 @@
+server:
+   port: 8081
+
+spring:
+  application:
+    name: ADDRESS-SERVICE
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/microservics
+    username: root
+    password: Anuj@Kumar1
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+      generate-ddl: true
+      database: default
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL8Dialect
+      open-in-view: false
+
+    datasource:
+    continue-on-error: false
+    generate-unique-name: false
+
+
